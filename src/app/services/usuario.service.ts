@@ -18,4 +18,12 @@ export class UsuarioService {
              map( resp => resp['data'])
            );
   }
+
+   getUserByID( id: string) {
+    return this.http.get(`${this.url}/users/${ id }`)
+      .pipe(
+        // tslint:disable-next-line: no-string-literal
+        map( resp => resp['data'])
+      );
+   }
 }
